@@ -1,0 +1,597 @@
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raíces Vivas — Plataforma Cultural Peruana</title>
+    <!-- Google Fonts: Fredoka para títulos expresivos y Nunito/Inter para lectura -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+
+    <!-- Navegación Superior -->
+    <header class="main-header">
+      <div class="header-container">
+        <a href="#inicio" class="brand-logo" onclick="navigateTo('inicio')">
+          <span class="sun-icon">☀️</span> RAÍCES VIVAS
+        </a>
+
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav-capsules" id="navMenu">
+          <button class="nav-btn active" data-target="inicio" onclick="navigateTo('inicio')">Inicio</button>
+          <button class="nav-btn" data-target="conocenos" onclick="navigateTo('conocenos')">Conócenos</button>
+          <button class="nav-btn" data-target="vision" onclick="navigateTo('vision')">Nuestra visión</button>
+          <button class="nav-btn" data-target="historias" onclick="navigateTo('historias')">Historias y leyendas</button>
+          <button class="nav-btn" data-target="galeria" onclick="navigateTo('galeria')">Galería de ilustraciones</button>
+          <button class="nav-btn" data-target="repositorio" onclick="navigateTo('repositorio')">Repositorio cultural</button>
+          <button class="nav-btn" data-target="tienda" onclick="navigateTo('tienda')">Tienda</button>
+          <button class="nav-btn" data-target="contacto" onclick="navigateTo('contacto')">Contáctanos</button>
+          <button class="nav-btn btn-register" data-target="registro" onclick="navigateTo('registro')">Regístrate</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenedor Principal de Vistas -->
+    <main id="appContainer">
+
+      <!-- 1. VISTA: INICIO -->
+      <section id="view-inicio" class="view-section active">
+        <div class="hero-card">
+          <div class="hero-image-wrapper">
+            <img src="assets/images/hero-machu-picchu.webp" alt="Persona andina contemplando Machu Picchu al atardecer" class="art-img" onerror="handleImageError(this, 'Machu Picchu y viajero andino')">
+          </div>
+          <div class="hero-content">
+            <h1>Descubre la diversidad cultural del Perú</h1>
+            <p>Historias, leyendas e ilustraciones que conectan con nuestras raíces.</p>
+            <button class="btn-primary" onclick="navigateTo('repositorio')">
+              Explorar contenido &rarr;
+            </button>
+            <div class="carousel-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tri-cards-grid">
+          <div class="feature-card" onclick="navigateTo('historias')">
+            <div class="card-art-box">
+              <img src="assets/images/icon-stories.webp" alt="Libro abierto de relatos" class="thumb-art" onerror="handleImageError(this, 'Historias y Leyendas')">
+            </div>
+            <h3>Historias y leyendas</h3>
+            <p>Conoce relatos de distintas regiones del Perú.</p>
+          </div>
+
+          <div class="feature-card" onclick="navigateTo('galeria')">
+            <div class="card-art-box">
+              <img src="assets/images/icon-palette.webp" alt="Paleta de arte y pincel" class="thumb-art" onerror="handleImageError(this, 'Galería de Ilustraciones')">
+            </div>
+            <h3>Galería de ilustraciones</h3>
+            <p>Explora obras inspiradas en nuestra cultura.</p>
+          </div>
+
+          <div class="feature-card" onclick="navigateTo('repositorio')">
+            <div class="card-art-box">
+              <img src="assets/images/icon-books.webp" alt="Libros tradicionales" class="thumb-art" onerror="handleImageError(this, 'Repositorio Cultural')">
+            </div>
+            <h3>Repositorio cultural</h3>
+            <p>Accede a información, recursos y contenidos.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. VISTA: CONÓCENOS -->
+      <section id="view-conocenos" class="view-section">
+        <div class="banner-panorama">
+          <img src="assets/images/banner-conocenos.webp" alt="Pobladores contemplando el lago y pueblo andino" class="art-img-panorama" onerror="handleImageError(this, 'Paisaje Andino y Pobladores')">
+        </div>
+        <div class="editorial-block text-center">
+          <h2>Conócenos</h2>
+          <p class="lead-text">Somos una iniciativa que busca visibilizar la riqueza cultural del Perú a través de historias, ilustraciones y contenidos digitales, conectando a más personas con nuestras raíces.</p>
+        </div>
+
+        <div class="sub-panel">
+          <h3 class="panel-title">¿Por qué Raíces Vivas?</h3>
+          <div class="pillars-grid">
+            <div class="pillar-box">
+              <div class="pillar-art">
+                <img src="assets/images/icon-diversity.webp" alt="Comunidad" onerror="handleImageError(this, 'Diversidad')">
+              </div>
+              <h4>Valoramos la diversidad cultural</h4>
+              <p>Promovemos el conocimiento y la visibilidad de distintas expresiones culturales peruanas.</p>
+            </div>
+            <div class="pillar-box">
+              <div class="pillar-art">
+                <img src="assets/images/icon-respect.webp" alt="Corazón y respeto" onerror="handleImageError(this, 'Respeto')">
+              </div>
+              <h4>Promovemos el respeto y la representación responsable</h4>
+              <p>Buscamos presentar contenidos culturales respetando su origen, significado y contexto.</p>
+            </div>
+            <div class="pillar-box">
+              <div class="pillar-art">
+                <img src="assets/images/icon-connect.webp" alt="Brote vegetal de conexión" onerror="handleImageError(this, 'Conexión')">
+              </div>
+              <h4>Creemos en el poder de la cultura para conectar</h4>
+              <p>Queremos facilitar el encuentro entre los jóvenes y las diferentes manifestaciones culturales del Perú.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. VISTA: NUESTRA VISIÓN -->
+      <section id="view-vision" class="view-section">
+        <div class="banner-panorama">
+          <img src="assets/images/banner-vision.webp" alt="Cóndor sobrevolando el valle y observadores" class="art-img-panorama" onerror="handleImageError(this, 'Visión y Cóndor Andino')">
+        </div>
+        <div class="editorial-block text-center">
+          <h2>Nuestra visión</h2>
+          <p class="lead-text">Aspiramos a ser un referente digital en la difusión de la diversidad cultural peruana, contribuyendo a una sociedad que reconozca y valore sus múltiples expresiones culturales.</p>
+        </div>
+
+        <div class="sub-panel">
+          <h3 class="panel-title">Nuestros pilares</h3>
+          <div class="pillars-grid">
+            <div class="pillar-box">
+              <div class="pillar-art">
+                <img src="assets/images/icon-pilar-diversity.webp" alt="Montaña y sol" onerror="handleImageError(this, 'Diversidad')">
+              </div>
+              <h4>Diversidad</h4>
+              <p>Mostrar expresiones culturales de todas las regiones y comunidades del Perú.</p>
+            </div>
+            <div class="pillar-box">
+              <div class="pillar-art">
+                <img src="assets/images/icon-pilar-access.webp" alt="Grupo accesible" onerror="handleImageError(this, 'Accesibilidad')">
+              </div>
+              <h4>Accesibilidad</h4>
+              <p>Crear contenidos atractivos, comprensibles y fáciles de explorar.</p>
+            </div>
+            <div class="pillar-box">
+              <div class="pillar-art">
+                <img src="assets/images/icon-pilar-reponsible.webp" alt="Brote de responsabilidad" onerror="handleImageError(this, 'Representación Responsable')">
+              </div>
+              <h4>Representación responsable</h4>
+              <p>Respetar el contexto de las expresiones culturales y reconocer a las comunidades y creadores vinculados con ellas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. VISTA: HISTORIAS Y LEYENDAS -->
+      <section id="view-historias" class="view-section">
+        <div class="section-hero-banner">
+          <div class="banner-text">
+            <h2>Historias y leyendas</h2>
+            <p>Descubre relatos que forman parte de nuestra diversidad cultural. Explora historias y leyendas de distintas regiones del Perú.</p>
+          </div>
+          <div class="banner-illustration-wrap">
+            <img src="assets/images/banner-historias.webp" alt="Manco Cápac y Mama Ocllo observando el valle" class="banner-right-art" onerror="handleImageError(this, 'Historias del Perú')">
+          </div>
+        </div>
+
+        <!-- Filtros y Búsqueda -->
+        <div class="search-filter-panel">
+          <div class="search-input-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="storiesSearchInput" placeholder="Buscar historias..." oninput="filterStories()">
+          </div>
+          <div class="filters-row">
+            <select id="storiesRegionFilter" onchange="filterStories()">
+              <option value="all">Región: Todas</option>
+              <option value="Cusco">Cusco</option>
+              <option value="Andes">Andes</option>
+              <option value="Amazonía">Amazonía</option>
+            </select>
+            <select id="storiesThemeFilter" onchange="filterStories()">
+              <option value="all">Tema: Todos</option>
+              <option value="Mito de origen">Mito de origen</option>
+              <option value="Mitos y creencias">Mitos y creencias</option>
+              <option value="Seres de la naturaleza">Seres de la naturaleza</option>
+            </select>
+            <select id="storiesFormatFilter" onchange="filterStories()">
+              <option value="all">Formato: Todos</option>
+              <option value="Relato ilustrado">Relato ilustrado</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Grid de Historias -->
+        <div class="cards-display-grid" id="storiesGrid"></div>
+        <div id="storiesEmptyState" class="empty-state hidden">No se encontraron historias que coincidan con tu búsqueda.</div>
+      </section>
+
+      <!-- 5. VISTA: GALERÍA DE ILUSTRACIONES -->
+      <section id="view-galeria" class="view-section">
+        <div class="section-hero-banner">
+          <div class="banner-text">
+            <h2>Galería de ilustraciones</h2>
+            <p>Explora una colección de ilustraciones inspiradas en la diversidad cultural del Perú. Conoce el talento de nuestra comunidad.</p>
+          </div>
+          <div class="banner-illustration-wrap">
+            <img src="assets/images/banner-galeria.webp" alt="Montañas y sol andino" class="banner-right-art" onerror="handleImageError(this, 'Galería Cultural')">
+          </div>
+        </div>
+
+        <!-- Filtros y Búsqueda -->
+        <div class="search-filter-panel">
+          <div class="search-input-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="gallerySearchInput" placeholder="Buscar ilustraciones..." oninput="filterGallery()">
+          </div>
+          <div class="filters-row">
+            <select id="galleryRegionFilter" onchange="filterGallery()">
+              <option value="all">Región: Todas</option>
+              <option value="Cusco">Cusco</option>
+              <option value="Andes">Andes</option>
+              <option value="Ayacucho">Ayacucho</option>
+              <option value="Puno">Puno</option>
+              <option value="La Libertad">La Libertad</option>
+              <option value="Amazonía">Amazonía</option>
+              <option value="Lambayeque">Lambayeque</option>
+              <option value="Ica">Ica</option>
+              <option value="Pasco">Pasco</option>
+            </select>
+            <select id="galleryStyleFilter" onchange="filterGallery()">
+              <option value="all">Estilo: Todos</option>
+              <option value="Retrato">Retrato</option>
+              <option value="Paisaje">Paisaje</option>
+              <option value="Fauna">Fauna</option>
+              <option value="Flora">Flora</option>
+              <option value="Cultura">Cultura</option>
+              <option value="Patrimonio">Patrimonio</option>
+            </select>
+            <select id="galleryFormatFilter" onchange="filterGallery()">
+              <option value="all">Formato: Todos</option>
+              <option value="Digital">Digital</option>
+              <option value="Ilustración">Ilustración</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Grid de 16 Obras -->
+        <div class="gallery-grid" id="galleryGrid"></div>
+        <div id="galleryEmptyState" class="empty-state hidden">No se encontraron ilustraciones con los filtros aplicados.</div>
+      </section>
+
+      <!-- 6. VISTA: REPOSITORIO CULTURAL -->
+      <section id="view-repositorio" class="view-section">
+        <div class="section-hero-banner">
+          <div class="banner-text">
+            <h2>Repositorio cultural</h2>
+            <p>Un espacio para explorar información, recursos y contenidos sobre la diversidad cultural del Perú.</p>
+          </div>
+          <div class="banner-illustration-wrap">
+            <img src="assets/images/banner-repositorio.webp" alt="Machu Picchu y flora peruana" class="banner-right-art" onerror="handleImageError(this, 'Repositorio Cultural')">
+          </div>
+        </div>
+
+        <div class="search-filter-panel">
+          <div class="search-input-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="repoSearchInput" placeholder="Buscar contenidos..." oninput="filterRepo()">
+          </div>
+          <div class="filters-row">
+            <select id="repoTypeFilter" onchange="filterRepo()">
+              <option value="all">Tipo de contenido: Todos</option>
+              <option value="Artículo">Artículo</option>
+              <option value="Guía lingüística">Guía lingüística</option>
+              <option value="Registro sonoro">Registro sonoro</option>
+              <option value="Ficha patrimonial">Ficha patrimonial</option>
+            </select>
+            <select id="repoRegionFilter" onchange="filterRepo()">
+              <option value="all">Región: Todas</option>
+              <option value="Nacional">Nacional</option>
+              <option value="Andes / Amazonía">Andes / Amazonía</option>
+              <option value="Costa / Andes">Costa / Andes</option>
+            </select>
+            <select id="repoThemeFilter" onchange="filterRepo()">
+              <option value="all">Tema: Todos</option>
+              <option value="Comunidad">Comunidad</option>
+              <option value="Lenguas">Lenguas</option>
+              <option value="Música">Música</option>
+              <option value="Arqueología">Arqueología</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="repo-list" id="repoList"></div>
+        <div id="repoEmptyState" class="empty-state hidden">No hay contenidos que coincidan con los criterios.</div>
+      </section>
+
+      <!-- 7. VISTA: TIENDA -->
+      <section id="view-tienda" class="view-section">
+        <div class="section-hero-banner">
+          <div class="banner-text">
+            <h2>Tienda</h2>
+            <p>Lleva contigo un pedacito de nuestra cultura. Aquí encontrarás ilustraciones y productos inspirados en la diversidad cultural del Perú.</p>
+          </div>
+          <div class="banner-illustration-wrap">
+            <img src="assets/images/banner-tienda.webp" alt="Vasija ceremonial andina y montañas" class="banner-right-art" onerror="handleImageError(this, 'Tienda Raíces Vivas')">
+          </div>
+        </div>
+
+        <!-- Barra de búsqueda y categorías -->
+        <div class="store-controls">
+          <div class="search-input-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="storeSearchInput" placeholder="Buscar productos..." oninput="filterStore()">
+          </div>
+          <div class="category-pills" id="storeCategoryPills">
+            <button class="pill-btn active" data-cat="all" onclick="selectStoreCat('all')">Todos</button>
+            <button class="pill-btn" data-cat="Ilustraciones" onclick="selectStoreCat('Ilustraciones')">Ilustraciones</button>
+            <button class="pill-btn" data-cat="Posters" onclick="selectStoreCat('Posters')">Pósteres</button>
+            <button class="pill-btn" data-cat="Digitales" onclick="selectStoreCat('Digitales')">Productos digitales</button>
+            <button class="pill-btn" data-cat="Otros" onclick="selectStoreCat('Otros')">Otros</button>
+          </div>
+        </div>
+
+        <div class="store-grid" id="storeGrid"></div>
+        <div id="storeEmptyState" class="empty-state hidden">No se encontraron productos disponibles.</div>
+
+        <!-- Notificación flotante de carrito -->
+        <div class="cart-floating-trigger" onclick="toggleCartModal(true)">
+          🛒 Carrito (<span id="cartCountBadge">0</span>)
+        </div>
+      </section>
+
+      <!-- 8. VISTA: REGISTRO Y SOLICITUD ARTÍSTICA -->
+      <section id="view-registro" class="view-section">
+        <div class="banner-panorama">
+          <img src="assets/images/banner-registro.webp" alt="Comunidad cultural que celebra nuestras raíces" class="art-img-panorama" onerror="handleImageError(this, 'Comunidad Raíces Vivas')">
+        </div>
+        <div class="editorial-block text-center">
+          <h2>Únete a una comunidad que celebra nuestras raíces</h2>
+        </div>
+
+        <div class="split-forms-container">
+          <!-- Bloque A: Crear Cuenta -->
+          <div class="form-card">
+            <div class="form-header-box">
+              <div class="form-avatar-icon">👥</div>
+              <div>
+                <h3>Crea tu cuenta</h3>
+                <p>Únete a nuestra comunidad para explorar, participar y compartir tu arte.</p>
+              </div>
+            </div>
+            <form id="registerForm" onsubmit="handleRegisterSubmit(event)">
+              <div class="input-group">
+                <label for="regName">Nombre completo</label>
+                <input type="text" id="regName" placeholder="Tu nombre completo" required>
+              </div>
+              <div class="input-group">
+                <label for="regEmail">Correo electrónico</label>
+                <input type="email" id="regEmail" placeholder="ejemplo@correo.com" required>
+              </div>
+              <div class="input-group">
+                <label for="regPass">Contraseña</label>
+                <input type="password" id="regPass" placeholder="••••••••" required minlength="6">
+              </div>
+              <div class="input-group">
+                <label for="regPassConfirm">Confirmar contraseña</label>
+                <input type="password" id="regPassConfirm" placeholder="••••••••" required minlength="6">
+              </div>
+              <button type="submit" class="btn-primary full-width">Crear cuenta</button>
+              <p class="form-footer-link">¿Ya tienes una cuenta? <a href="#" onclick="alert('Funcionalidad de inicio de sesión planificada para la fase con backend.'); return false;">Inicia sesión</a></p>
+            </form>
+            <div id="registerSuccessMsg" class="alert-success hidden">¡Cuenta de demostración creada exitosamente! Ahora puedes enviar tu propuesta artística.</div>
+          </div>
+
+          <!-- Bloque B: Compartir Arte -->
+          <div class="form-card">
+            <div class="form-header-box">
+              <div class="form-avatar-icon">🎨</div>
+              <div>
+                <h3>¿Quieres compartir tu arte?</h3>
+                <p>Envía una solicitud para que nuestro equipo pueda revisar tu propuesta artística antes de habilitar su publicación.</p>
+              </div>
+            </div>
+            <form id="artSubmissionForm" onsubmit="handleArtSubmit(event)">
+              <div class="input-group">
+                <label for="artType">Tipo de obra</label>
+                <select id="artType" required>
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="Ilustración Digital">Ilustración Digital</option>
+                  <option value="Pintura Tradicional">Pintura Tradicional</option>
+                  <option value="Diseño Textil">Diseño Textil</option>
+                  <option value="Otro">Otro medio cultural</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <label for="artTitle">Título de la obra</label>
+                <input type="text" id="artTitle" placeholder="Nombre de tu propuesta" required>
+              </div>
+              <div class="input-group">
+                <label for="artDesc">Descripción de la propuesta</label>
+                <textarea id="artDesc" rows="3" placeholder="Describe el trasfondo cultural y técnica empleada..." required></textarea>
+              </div>
+              <div class="input-group">
+                <label for="artRegion">Región o inspiración cultural</label>
+                <input type="text" id="artRegion" placeholder="Ej. Costa norte, Valle del Mantaro, Amazonía central" required>
+              </div>
+              <div class="file-upload-zone" onclick="document.getElementById('artFileInput').click()">
+                <input type="file" id="artFileInput" accept=".jpg,.png,.pdf" style="display:none;" onchange="handleFileSelect(this)">
+                <div class="upload-icon">☁️⬆️</div>
+                <p><strong>Adjuntar imagen o portafolio</strong></p>
+                <span id="selectedFileName">(Formato JPG, PNG o PDF)</span>
+              </div>
+              <button type="submit" class="btn-primary full-width">Enviar solicitud</button>
+            </form>
+            <div id="artSuccessMsg" class="alert-success hidden">¡Solicitud recibida! Tu propuesta ha quedado conceptualmente en cola de revisión curatorial.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. VISTA: CONTÁCTANOS -->
+      <section id="view-contacto" class="view-section">
+        <div class="section-hero-banner">
+          <div class="banner-text">
+            <h2>Contáctanos</h2>
+            <p>Si tienes alguna consulta, sugerencia o deseas colaborar con nosotros, escríbenos. ¡Nos encantaría conversar contigo!</p>
+          </div>
+          <div class="banner-illustration-wrap">
+            <img src="assets/images/banner-contacto.webp" alt="Paisaje de Machu Picchu y flores" class="banner-right-art" onerror="handleImageError(this, 'Contacto Raíces Vivas')">
+          </div>
+        </div>
+
+        <div class="contact-split-layout">
+          <div class="contact-form-box">
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="input-group">
+                <label for="cntName">Nombre completo</label>
+                <input type="text" id="cntName" placeholder="Tu nombre" required>
+              </div>
+              <div class="input-group">
+                <label for="cntEmail">Correo electrónico</label>
+                <input type="email" id="cntEmail" placeholder="tu@correo.com" required>
+              </div>
+              <div class="input-group">
+                <label for="cntMessage">Mensaje</label>
+                <textarea id="cntMessage" rows="5" placeholder="¿En qué podemos ayudarte o colaborar?" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Enviar mensaje</button>
+            </form>
+            <div id="contactSuccessMsg" class="alert-success hidden">¡Gracias por escribirnos! Tu mensaje ha sido enviado (demostración interactiva).</div>
+          </div>
+
+        <div class="social-side-box">
+          <h3>También puedes encontrarnos en</h3>
+          <div class="social-cards">
+            <!-- Instagram Oficial -->
+            <a href="javascript:void(0)" class="social-item" aria-label="Instagram de Raíces Vivas">
+              <span class="social-brand-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="igGradient" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#FFD600"/>
+                      <stop offset="25%" stop-color="#FF7A00"/>
+                      <stop offset="50%" stop-color="#FF0069"/>
+                      <stop offset="75%" stop-color="#D300C5"/>
+                      <stop offset="100%" stop-color="#7638FA"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#igGradient)"/>
+                  <rect x="4.5" y="4.5" width="15" height="15" rx="4" stroke="#FFFFFF" stroke-width="1.8" fill="none"/>
+                  <circle cx="12" cy="12" r="3.7" stroke="#FFFFFF" stroke-width="1.8" fill="none"/>
+                  <circle cx="16.7" cy="7.3" r="1.1" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span class="social-name">Instagram</span>
+            </a>
+
+            <!-- TikTok Oficial -->
+            <a href="javascript:void(0)" class="social-item" aria-label="TikTok de Raíces Vivas">
+              <span class="social-brand-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Capa Cian (#25F4EE) -->
+                  <path d="M16.5 7.2c-.8-.5-1.4-1.2-1.7-2.1-.1-.3-.2-.7-.2-1.1h-2.5v11.8c0 1.5-1.2 2.7-2.7 2.7-1.3 0-2.3-.9-2.6-2.1-.4-1.4.6-2.9 2.1-3.2.4-.1.7-.1 1.1 0v-2.6c-2.8-.2-5.2 1.8-5.6 4.6-.4 3.1 1.8 5.8 4.9 6.2 3.1.4 5.9-1.8 6.2-4.9.1-.5.1-.9 0-1.4V9.8c1.3.9 2.8 1.4 4.4 1.4V8.7c-1.3 0-2.4-.6-3.4-1.5z" fill="#25F4EE"/>
+                  <!-- Capa Magenta (#FE2C55) -->
+                  <path d="M16.9 6.8c-.8-.5-1.4-1.2-1.7-2.1-.1-.3-.2-.7-.2-1.1h-2.5v11.8c0 1.5-1.2 2.7-2.7 2.7-1.3 0-2.3-.9-2.6-2.1-.4-1.4.6-2.9 2.1-3.2.4-.1.7-.1 1.1 0v-2.6c-2.8-.2-5.2 1.8-5.6 4.6-.4 3.1 1.8 5.8 4.9 6.2 3.1.4 5.9-1.8 6.2-4.9.1-.5.1-.9 0-1.4V9.4c1.3.9 2.8 1.4 4.4 1.4V8.3c-1.3 0-2.4-.6-3.4-1.5z" fill="#FE2C55"/>
+                  <!-- Capa Central Blanca / Negra (#000000 y #FFFFFF) -->
+                  <path d="M16.7 7c-.8-.5-1.4-1.2-1.7-2.1-.1-.3-.2-.7-.2-1.1h-2.5v11.8c0 1.5-1.2 2.7-2.7 2.7-1.3 0-2.3-.9-2.6-2.1-.4-1.4.6-2.9 2.1-3.2.4-.1.7-.1 1.1 0V10c-2.8-.2-5.2 1.8-5.6 4.6-.4 3.1 1.8 5.8 4.9 6.2 3.1.4 5.9-1.8 6.2-4.9.1-.5.1-.9 0-1.4V9.6c1.3.9 2.8 1.4 4.4 1.4V8.5c-1.3 0-2.4-.6-3.4-1.5z" fill="#111111"/>
+                </svg>
+              </span>
+              <span class="social-name">TikTok</span>
+            </a>
+
+            <!-- YouTube Oficial -->
+            <a href="javascript:void(0)" class="social-item" aria-label="YouTube de Raíces Vivas">
+              <span class="social-brand-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Fondo Rojo Oficial (#FF0000) -->
+                  <path d="M22.5 7.8c-.2-1-.9-1.8-1.9-2.1C18.9 5.2 12 5.2 12 5.2s-6.9 0-8.6.5c-1 .3-1.7 1.1-1.9 2.1C1 9.5 1 12 1 12s0 2.5.5 4.2c.2 1 .9 1.8 1.9 2.1 1.7.5 8.6.5 8.6.5s6.9 0 8.6-.5c1-.3 1.7-1.1 1.9-2.1.5-1.7.5-4.2.5-4.2s0-2.5-.5-4.2z" fill="#FF0000"/>
+                  <!-- Triángulo de Reproducción Blanco -->
+                  <polygon points="9.8,8.8 15.5,12 9.8,15.2" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span class="social-name">YouTube</span>
+            </a>
+          </div>
+          <div class="social-leaf-decor">
+            <img src="assets/images/leaf-decor.webp" alt="Hojas ornamentales" class="leaf-art" onerror="handleImageError(this, 'Detalle Natural')">
+        </div>
+        </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- MODAL: DETALLE DE HISTORIA -->
+    <div id="storyDetailModal" class="modal-overlay hidden" onclick="closeStoryModal(event)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <button class="modal-close-btn" onclick="closeStoryModal()">&times;</button>
+        <div class="modal-art-box">
+          <img id="mStoryImg" src="" alt="" class="modal-hero-art">
+        </div>
+        <div class="modal-body-content">
+          <span id="mStoryRegion" class="badge-capsule"></span>
+          <h2 id="mStoryTitle"></h2>
+          <div id="mStoryText" class="narrative-paragraphs"></div>
+          <div class="source-tag"><strong>Fuente / Contexto:</strong> <span id="mStorySource"></span></div>
+          <button class="btn-secondary" onclick="closeStoryModal()">Volver a la colección</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: DETALLE DE ILUSTRACIÓN -->
+    <div id="artDetailModal" class="modal-overlay hidden" onclick="closeArtModal(event)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <button class="modal-close-btn" onclick="closeArtModal()">&times;</button>
+        <div class="modal-art-box">
+          <img id="mArtImg" src="" alt="" class="modal-hero-art">
+        </div>
+        <div class="modal-body-content">
+          <div id="mArtBadges" class="badges-row"></div>
+          <h2 id="mArtTitle"></h2>
+          <p id="mArtDesc" class="lead-text"></p>
+          <p class="meta-line"><strong>Autoría:</strong> <span id="mArtAuthor"></span></p>
+          <button class="btn-secondary" onclick="closeArtModal()">Volver a la galería</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: DETALLE DE REPOSITORIO CULTURAL -->
+    <div id="repoDetailModal" class="modal-overlay hidden" onclick="closeRepoModal(event)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <button class="modal-close-btn" onclick="closeRepoModal()">&times;</button>
+        <div class="modal-art-box">
+          <img id="mRepoImg" src="" alt="" class="modal-hero-art">
+        </div>
+        <div class="modal-body-content">
+          <span id="mRepoCategory" class="badge-capsule"></span>
+          <h2 id="mRepoTitle"></h2>
+          <div id="mRepoContent" class="narrative-paragraphs"></div>
+          <div class="source-tag"><strong>Fuentes documentales:</strong> <span id="mRepoSources"></span></div>
+          <button class="btn-secondary" onclick="closeRepoModal()">Volver al repositorio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: CARRITO DE COMPRAS -->
+    <div id="cartModal" class="modal-overlay hidden" onclick="toggleCartModal(false)">
+      <div class="cart-slide-panel" onclick="event.stopPropagation()">
+        <div class="cart-header">
+          <h3>Tu Carrito (Demostración)</h3>
+          <button class="modal-close-btn" onclick="toggleCartModal(false)">&times;</button>
+        </div>
+        <div id="cartItemsList" class="cart-items-container"></div>
+        <div class="cart-footer">
+          <div class="cart-total-row">
+            <span>Subtotal estimado:</span>
+            <strong id="cartSubtotal">S/ 0.00</strong>
+          </div>
+          <p class="demo-disclaimer">* Los precios e ítems son de carácter referencial y conceptual para evaluación.</p>
+          <button class="btn-primary full-width" onclick="checkoutDemo()">Finalizar pedido conceptual</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+  </html>
